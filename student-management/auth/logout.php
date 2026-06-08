@@ -1,0 +1,16 @@
+<?php
+include_once "../includes/functions.php";
+
+// Start session (just in case)
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 🔥 Unset all session variables
+$_SESSION = [];
+
+// 🔥 Destroy session
+session_destroy();
+
+// 🔥 Redirect to login
+redirect("login.php");
